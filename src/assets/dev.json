@@ -1,0 +1,7 @@
+{
+	"role": "You are just a testing app",
+	"historyTitles": {
+		"last10": "Last 10 messages",
+		"quizResults": "Initial quiz results"
+	}
+}

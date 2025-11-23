@@ -1,0 +1,95 @@
+[
+	{
+		"id": 1,
+		"type": "single",
+		"category": "personality",
+		"question": "What describes you best when working on something new?",
+		"options": [
+			{ "id": "a", "text": "I love solving puzzles and figuring things out", "value": "analytical" },
+			{ "id": "b", "text": "I enjoy creating original ideas or visuals", "value": "creative" },
+			{ "id": "c", "text": "I like working with others and sharing ideas", "value": "collaborative" },
+			{ "id": "d", "text": "I move fast and like finishing things quickly", "value": "fast-paced" }
+		],
+		"funFact": "🐵 Problem-solvers often thrive in software engineering and AI roles!"
+	},
+	{
+		"id": 2,
+		"type": "multi",
+		"category": "interests",
+		"question": "What kind of activities excite you the most? (Select all that apply)",
+		"options": [
+			{ "id": "a", "text": "Designing or visual creativity (art, videos, graphics)", "value": "design" },
+			{ "id": "b", "text": "Figuring out patterns or solving logic problems", "value": "logic" },
+			{ "id": "c", "text": "Thinking about how apps or games could work", "value": "apps" },
+			{ "id": "d", "text": "Understanding how to keep systems safe", "value": "security" },
+			{ "id": "e", "text": "Learning about robots or smart technology", "value": "ai" },
+			{ "id": "f", "text": "Exploring how the internet and cloud systems work", "value": "cloud" }
+		],
+		"funFact": "🐵 Many tech careers combine creativity AND logic — you don't have to pick just one!"
+	},
+	{
+		"id": 3,
+		"type": "single",
+		"category": "experience",
+		"question": "How familiar are you with technology or coding?",
+		"options": [
+			{ "id": "a", "text": "I'm totally new to all of it", "value": "beginner" },
+			{ "id": "b", "text": "I tried coding a bit or learned something in school", "value": "some-experience" },
+			{ "id": "c", "text": "I work well with computers but not coding yet", "value": "tech-comfortable" },
+			{ "id": "d", "text": "I already build things on my own", "value": "advanced" }
+		],
+		"funFact": "🐵 Everyone starts somewhere — even tech leaders were beginners once!"
+	},
+	{
+		"id": 4,
+		"type": "single",
+		"category": "learning",
+		"question": "How do you learn best?",
+		"options": [
+			{ "id": "a", "text": "By trying things hands-on (projects, experiments)", "value": "hands-on" },
+			{ "id": "b", "text": "With clear step-by-step guides or courses", "value": "structured" },
+			{ "id": "c", "text": "By exploring and researching on my own", "value": "independent" },
+			{ "id": "d", "text": "By working with others or in groups", "value": "social" }
+		],
+		"funFact": "🐵 Hands-on learners often become great developers and engineers!"
+	},
+	{
+		"id": 5,
+		"type": "single",
+		"category": "time",
+		"question": "How much time can you dedicate each week to learning?",
+		"options": [
+			{ "id": "a", "text": "1-3 hours (light)", "value": "light" },
+			{ "id": "b", "text": "3-6 hours (steady)", "value": "steady" },
+			{ "id": "c", "text": "6-10 hours (focused)", "value": "focused" },
+			{ "id": "d", "text": "10+ hours (intense)", "value": "intense" }
+		],
+		"funFact": "🐵 Even small, consistent learning leads to huge progress!"
+	},
+	{
+		"id": 6,
+		"type": "single",
+		"category": "goals",
+		"question": "What is your main goal on this adventure?",
+		"options": [
+			{ "id": "a", "text": "Discover which tech career fits me", "value": "explore" },
+			{ "id": "b", "text": "Learn skills I can show on my CV", "value": "skills" },
+			{ "id": "c", "text": "Start creating real projects", "value": "projects" },
+			{ "id": "d", "text": "Just having fun and exploring technology", "value": "fun" }
+		],
+		"funFact": "🐵 Exploring is the best first step — the jungle is big and exciting!"
+	},
+	{
+		"id": 7,
+		"type": "single",
+		"category": "environment",
+		"question": "Where do you feel most productive?",
+		"options": [
+			{ "id": "a", "text": "In a quiet place on my own", "value": "solo" },
+			{ "id": "b", "text": "With others around me (school, clubs)", "value": "social" },
+			{ "id": "c", "text": "Online spaces (Discord, study groups)", "value": "online" },
+			{ "id": "d", "text": "Anywhere — I'm flexible", "value": "flexible" }
+		],
+		"funFact": "🐵 Many developers learn and work from anywhere — that's the magic of tech!"
+	}
+]
