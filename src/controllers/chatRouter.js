@@ -19,10 +19,14 @@ chatRouter.post("/prepareFirstStep", middleware.userExtractor, async (req, res) 
 	const user = await User
 		.findById(req.user.id);
 
-	return await ai.models.generateContent({
+	const data = await ai.models.generateContent({
 		model: "gemini-2.5-flash-lite",
 		contents: messageUtil.build( user.chatHistory, prompt, type )
 	});
+
+	const json = JSON.parse( data.text.replace(/^```json\s+/, "").replace(/\s*```$/, "") );
+
+	res.json(json);
 });
 
 module.exports = chatRouter;
