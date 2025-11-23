@@ -51,4 +51,11 @@ authRouter.get("/", middleware.userExtractor, async (req, res, next) => {
 	});
 });
 
+authRouter.post("/logout", middleware.userExtractor, async (req, res, next) => {
+
+	// For JWT, logout is handled client-side by removing the token
+	// This endpoint exists for consistency and future token blacklisting if needed
+	res.status(200).json({message: "Logged out successfully"});
+});
+
 module.exports = authRouter;

@@ -1,0 +1,137 @@
+### TechMonkeys API Test Requests
+### For VS Code REST Client Extension
+### 
+### INSTRUCTIONS:
+### 1. Klikni "Send Request" iznad svakog requesta (ili Ctrl+Alt+R / Cmd+Alt+R)
+### 2. Za login, kopiraj token iz response-a i zameni @token vrednost ispod
+### 3. Sada možeš testirati sve zaštićene endpoint-e
+###
+### Base URL - adjust for your environment
+@baseUrl = http://localhost:5001
+@token = PASTE_TOKEN_HERE_AFTER_LOGIN
+
+### Test Variables
+@username = testuser
+@password = testpass123
+@name = Test User
+
+###
+### AUTH ENDPOINTS
+###
+
+### Register new user
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "name": "{{name}}",
+  "password": "{{password}}"
+}
+
+### Login - Get token
+# ⚠️ IMPORTANT: Nakon što pokreneš ovaj request, kopiraj "token" iz response-a
+# i zameni "PASTE_TOKEN_HERE_AFTER_LOGIN" u @token varijabli na vrhu fajla
+POST {{baseUrl}}/api/auth
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+### Get current user (requires token)
+# ⚠️ Prvo pokreni login request iznad, kopiraj token i zameni @token varijablu
+GET {{baseUrl}}/api/auth
+Authorization: Bearer {{token}}
+
+### Logout (requires token)
+# ⚠️ Logout endpoint - removes token on client side
+POST {{baseUrl}}/api/auth/logout
+Authorization: Bearer {{token}}
+
+###
+### USER ENDPOINTS
+###
+
+### Get all users (requires token)
+# ⚠️ Zahteva validan token - prvo se uloguj
+GET {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+
+### Delete user (requires token)
+# Replace :id with actual user ID
+DELETE {{baseUrl}}/api/users/:id
+Authorization: Bearer {{token}}
+
+###
+### CHAT ENDPOINTS (if available)
+###
+
+### Get chat history (requires token)
+GET {{baseUrl}}/api/chat
+Authorization: Bearer {{token}}
+
+### Prepare first step (chat with AI - requires token)
+# ⚠️ Zahteva validan token - prvo se uloguj
+POST {{baseUrl}}/api/chat/prepareFirstStep
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+### TEST SCENARIOS - POKRENI OVE REDOM!
+###
+
+### 1. Register a new user (PRVO POKRENI OVO!)
+# ⚠️ Ovo kreira novog korisnika u bazi
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "name": "New User",
+  "password": "password123"
+}
+
+### 2. Login with registered user (DRUGO POKRENI OVO!)
+# ⚠️ Koristi ISTI username i password kao u koraku 1
+# Nakon ovoga, kopiraj "token" iz response-a i zameni @token varijablu na vrhu fajla
+POST {{baseUrl}}/api/auth
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "password123"
+}
+
+### 3. Test invalid login
+POST {{baseUrl}}/api/auth
+Content-Type: application/json
+
+{
+  "username": "wronguser",
+  "password": "wrongpass"
+}
+
+### 4. Test registration with short username (should fail)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "abc",
+  "name": "Short User",
+  "password": "password123"
+}
+
+### 5. Test registration with short password (should fail)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "validuser",
+  "name": "Valid User",
+  "password": "123"
+}
+
